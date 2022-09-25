@@ -1,0 +1,6 @@
+[hosts_to_add_key]
+172.99.1.82 ansible_user=ubuntu ansible_port=2222
+172.99.1.56 ansible_user=centos ansible_port=22
+
+[hosts_to_add_key:vars]
+ansible_ssh_common_args="-o StrictHostKeyChecking=no"
