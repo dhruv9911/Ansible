@@ -21,17 +21,17 @@
         ssh_key_file: .ssh/id_rsa 
         ssh_key_type: rsa 
     with_items: 
-      - { name: 'sarav', group: 'adminteam'}
-      - { name: 'hanu', group: 'devopsteam'}
+      - { name: 'dhruv', group: 'adminteam'}
+      - { name: 'aptron', group: 'devopsteam'}
 
-  - name: "Copy the authorized key file from"
-    authorized_key:
-      user: "{{item.name}}"
-      state: "{{item.userstate}}"
-      key: "{{ lookup('file', '{{ item.key }}')}}"
-    with_items:
-      - { name: 'sarav', key: 'sarav.pub', userstate: 'present'}
-      - { name: 'hanu', key: 'hanu.pub', userstate: 'present'}
+#  - name: "Copy the authorized key file from"
+#    authorized_key:
+#      user: "{{item.name}}"
+#      state: "{{item.userstate}}"
+#      key: "{{ lookup('file', '{{ item.key }}')}}"
+#    with_items:
+#      - { name: 'dhruv', key: 'dhruv.pub', userstate: 'present'}
+#      - { name: 'aptron', key: 'aptron.pub', userstate: 'present'}
       
 
   
